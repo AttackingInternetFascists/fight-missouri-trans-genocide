@@ -22,6 +22,8 @@ It is crucial to resist the creation of such a registry and to stand up against 
 
 ### 10 Stages of Genocide: Stage 8, Persecution
 
+![image](https://user-images.githubusercontent.com/114874765/233242905-2d8bb4a4-5ea4-4e81-b067-44b7230b1007.png)
+
 > Victims are identified because of their ethnicity or religion and death lists are drawn up. People are sometimes segregated into ghettos, deported or starved and property is often expropriated. Genocidal massacres begin.
 >
 > _https://www.hmd.org.uk/learn-about-the-holocaust-and-genocides/what-is-genocide/the-ten-stages-of-genocide/_
