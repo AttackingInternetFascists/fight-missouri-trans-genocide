@@ -45,15 +45,15 @@ We want to discourage users from abusing this script to submit multiple reports,
 If you're a nerd, here's a cURL minus captcha
 
 It accepts the following environment variables:
- * FNAME
- * LNAME
- * ADDRESS
- * CITY
- * STATE
- * ZIP
- * EMAIL
- * PHONE
- * MESSAGE
+ * `FNAME`
+ * `LNAME`
+ * `ADDRESS`
+ * `CITY`
+ * `STATE`
+ * `ZIP`
+ * `EMAIL`
+ * `PHONE`
+ * `MESSAGE`
 
 ```sh
 curl 'https://ago.mo.gov/file-a-complaint/transgender-center-concerns' \
