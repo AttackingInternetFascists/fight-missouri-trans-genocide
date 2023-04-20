@@ -1,4 +1,4 @@
-# Protest Trans Genocide in Missouri
+# Protest Transgender Genocide in Missouri
 
 ## The Message
 
