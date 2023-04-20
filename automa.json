@@ -1,0 +1,1013 @@
+{
+  "extVersion": "1.28.1",
+  "name": "Protest Trans Genocide in Missouri",
+  "icon": "riGlobalLine",
+  "table": [
+    {
+      "id": "K12d6",
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "id": "WUFFE",
+      "name": "lastName",
+      "type": "string"
+    },
+    {
+      "id": "YVn9Z",
+      "name": "street",
+      "type": "string"
+    },
+    {
+      "id": "_hroM",
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "id": "FG5Ch",
+      "name": "state",
+      "type": "string"
+    },
+    {
+      "id": "qx147",
+      "name": "zip",
+      "type": "string"
+    },
+    {
+      "id": "NLqhU",
+      "name": "email",
+      "type": "string"
+    }
+  ],
+  "version": "1.28.1",
+  "drawflow": {
+    "nodes": [
+      {
+        "computedPosition": {
+          "x": 244.7356872330082,
+          "y": 388.5913240918598,
+          "z": 0
+        },
+        "data": {
+          "activeInInput": false,
+          "contextMenuName": "",
+          "contextTypes": [],
+          "date": "",
+          "days": [],
+          "delay": 5,
+          "description": "",
+          "disableBlock": false,
+          "interval": 60,
+          "isUrlRegex": false,
+          "observeElement": {
+            "baseElOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            },
+            "baseSelector": "",
+            "matchPattern": "",
+            "selector": "",
+            "targetOptions": {
+              "attributeFilter": [],
+              "attributes": false,
+              "characterData": false,
+              "childList": true,
+              "subtree": false
+            }
+          },
+          "parameters": [],
+          "preferParamsInTab": false,
+          "shortcut": "",
+          "time": "00:00",
+          "type": "manual",
+          "url": ""
+        },
+        "dimensions": {
+          "width": 192,
+          "height": 72
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "YvkVWNy1ly2GJ9OW5C7gd-output-1",
+              "position": "right",
+              "x": 196,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "YvkVWNy1ly2GJ9OW5C7gd",
+        "initialized": true,
+        "label": "trigger",
+        "position": {
+          "x": 244.7356872330082,
+          "y": 388.5913240918598
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockBasic"
+      },
+      {
+        "computedPosition": {
+          "x": 544.156807680144,
+          "y": 388.4337184999762,
+          "z": 0
+        },
+        "data": {
+          "active": true,
+          "customUserAgent": false,
+          "description": "Open the Missouri \"Transgender Center Concerns Form\"",
+          "disableBlock": false,
+          "inGroup": false,
+          "updatePrevTab": true,
+          "url": "https://ago.mo.gov/file-a-complaint/transgender-center-concerns",
+          "userAgent": "",
+          "waitTabLoaded": true
+        },
+        "dimensions": {
+          "width": 192,
+          "height": 72
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "66xumv5-output-1",
+              "position": "right",
+              "x": 196,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "66xumv5-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "66xumv5",
+        "initialized": true,
+        "label": "new-tab",
+        "position": {
+          "x": 544.156807680144,
+          "y": 388.4337184999762
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockBasic"
+      },
+      {
+        "computedPosition": {
+          "x": 838.8295411660229,
+          "y": 388.2839720746655,
+          "z": 0
+        },
+        "data": {
+          "code": "const chance = new Chance()\nconst firstName = chance.first()\nconst lastName = chance.last()\nconst street = chance.street({ country: 'us' })\nconst city = chance.city()\nconst state = 'MO' // chance.state({ country: 'us' })\nconst zip = chance.zip()\n\nconst emailPrefix = chance.pickone([\n  `${firstName}.${lastName}`,\n  `${firstName}.${lastName}`,\n  `${firstName[0]}${lastName}`,\n  `${firstName[0]}${lastName}${chance.integer({ min: 0, max: 999 })}`,\n  `${chance.animal()}${chance.animal()}${chance.integer({ min: 0, max: 999 })}`,\n  `${chance.animal()}.${chance.animal()}.${chance.integer({ min: 0, max: 999 })}`,\n])\n\nconst emailDomain = chance.pickone([\n  chance.domain(),\n  chance.pickone([\n    'gmail.com',\n    'protonmail.com',\n    'yahoo.com',\n    'aol.com',\n    'outlook.com'\n  ])\n])\n\nconst email = chance.pickone([\n  chance.email(),\n  chance.email({ domain: emailDomain }),\n  `${emailPrefix}@${emailDomain}`,\n])\n\nautomaSetVariable('firstName', firstName)\nautomaSetVariable('lastName', lastName)\nautomaSetVariable('street', street)\nautomaSetVariable('city', city)\nautomaSetVariable('state', state)\nautomaSetVariable('zip', zip)\nautomaSetVariable('email', email)\n\nconsole.log(automaRefData('variables', 'firstName'))\n\nautomaNextBlock()",
+          "context": "website",
+          "description": "Generate Content",
+          "disableBlock": false,
+          "everyNewTab": false,
+          "preloadScripts": [
+            {
+              "removeAfterExec": true,
+              "src": "https://cdnjs.cloudflare.com/ajax/libs/chance/1.1.11/chance.min.js"
+            }
+          ],
+          "runBeforeLoad": false,
+          "timeout": 20000
+        },
+        "dimensions": {
+          "width": 192,
+          "height": 72
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "lgi43dc-output-1",
+              "position": "right",
+              "x": 196.00006103515625,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "lgi43dc-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "lgi43dc",
+        "initialized": true,
+        "label": "javascript-code",
+        "position": {
+          "x": 838.8295411660229,
+          "y": 388.2839720746655
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockBasic"
+      },
+      {
+        "computedPosition": {
+          "x": 1599.54511931724,
+          "y": 256.8679445382851,
+          "z": 0
+        },
+        "data": {
+          "blocks": [
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Enter Street",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "input[name=\"TextFieldController_1\"]",
+                "type": "text-field",
+                "value": "{{variables.street}}",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "dUb_e"
+            },
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Enter City",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "input[name=\"TextFieldController_2\"]",
+                "type": "text-field",
+                "value": "{{variables.city}}",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "PBnEH"
+            },
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Enter State",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "select[name=\"DropdownListFieldController\"]",
+                "type": "select",
+                "value": "MO",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "hSvEB"
+            },
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Enter Zip",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "input[name=\"TextFieldController_6\"]",
+                "type": "text-field",
+                "value": "{{variables.zip}}",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "HHyAe"
+            }
+          ],
+          "disableBlock": false,
+          "name": "Enter Address"
+        },
+        "dimensions": {
+          "width": 256,
+          "height": 340
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "am5mcys-output-1",
+              "position": "right",
+              "x": 260,
+              "y": 162,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "am5mcys-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 162,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "am5mcys",
+        "initialized": true,
+        "label": "blocks-group",
+        "position": {
+          "x": 1599.54511931724,
+          "y": 256.8679445382851
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockGroup"
+      },
+      {
+        "computedPosition": {
+          "x": 1156.0019635668946,
+          "y": 293.4129400738576,
+          "z": 0
+        },
+        "data": {
+          "blocks": [
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Enter First Name",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "input[name=\"TextFieldController_4\"]",
+                "type": "text-field",
+                "value": "{{variables.firstName}}",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "OCF0g"
+            },
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Enter Last Name",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "input[name=\"TextFieldController_5\"]",
+                "type": "text-field",
+                "value": "{{variables.lastName}}",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "EyB60"
+            }
+          ],
+          "disableBlock": false,
+          "name": "Enter Name"
+        },
+        "dimensions": {
+          "width": 256,
+          "height": 264
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "2aoe65j-output-1",
+              "position": "right",
+              "x": 260,
+              "y": 124,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "2aoe65j-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 124,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "2aoe65j",
+        "initialized": true,
+        "label": "blocks-group",
+        "position": {
+          "x": 1156.0019635668946,
+          "y": 293.4129400738576
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockGroup"
+      },
+      {
+        "computedPosition": {
+          "x": 2052.9692639065015,
+          "y": 323.015811054006,
+          "z": 0
+        },
+        "data": {
+          "blocks": [
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Enter Email",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "input[name=\"TextFieldController_0\"]",
+                "type": "text-field",
+                "value": "{{variables.email}}",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "HJDJr"
+            }
+          ],
+          "disableBlock": false,
+          "name": "Enter Contact"
+        },
+        "dimensions": {
+          "width": 256,
+          "height": 209
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "3rfx6aw-output-1",
+              "position": "right",
+              "x": 260,
+              "y": 96.5,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "3rfx6aw-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 96.5,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "3rfx6aw",
+        "initialized": true,
+        "label": "blocks-group",
+        "position": {
+          "x": 2052.9692639065015,
+          "y": 323.015811054006
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockGroup"
+      },
+      {
+        "computedPosition": {
+          "x": 2521.6279408735136,
+          "y": 390.9356108542975,
+          "z": 0
+        },
+        "data": {
+          "assignVariable": false,
+          "clearValue": true,
+          "dataColumn": "",
+          "delay": 0,
+          "description": "Enter Message",
+          "disableBlock": false,
+          "events": [],
+          "findBy": "cssSelector",
+          "getValue": false,
+          "markEl": false,
+          "multiple": false,
+          "optionPosition": "1",
+          "saveData": false,
+          "selectOptionBy": "value",
+          "selected": true,
+          "selector": "textarea[name=\"ParagraphTextFieldController\"]",
+          "type": "text-field",
+          "value": "Missouri's new law that limits access to transgender healthcare is a violation of basic human rights and dignity. Denying healthcare to a group of people simply because of their gender identity is discriminatory and unjust.\n\nTransgender individuals face numerous challenges, including discrimination, violence, and mental health issues. Access to healthcare is crucial for their well-being and survival. Denying them medical treatment only exacerbates their struggles and denies them the basic human right to health.\n\nMoreover, limiting access to healthcare for transgender individuals goes against the medical community's consensus that gender-affirming care is necessary for transgender people's physical and mental health. Denying them access to healthcare is not only unjust but also puts their lives at risk.\n\nTherefore, Missouri should repeal this law and ensure that all individuals, regardless of their gender identity, have equal access to healthcare. We must stand up against discrimination and ensure that everyone has the opportunity to lead a healthy and fulfilling life.",
+          "variableName": "",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "dimensions": {
+          "width": 192,
+          "height": 72
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "4t39v7t-output-1",
+              "position": "right",
+              "x": 196,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "4t39v7t-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "4t39v7t",
+        "initialized": true,
+        "label": "forms",
+        "position": {
+          "x": 2521.6279408735136,
+          "y": 390.9356108542975
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockBasic"
+      },
+      {
+        "computedPosition": {
+          "x": 2852.046561412975,
+          "y": 391.8768163060967,
+          "z": 0
+        },
+        "data": {
+          "description": "Scroll To Captcha",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "incX": false,
+          "incY": false,
+          "markEl": false,
+          "multiple": false,
+          "scrollIntoView": true,
+          "scrollX": 0,
+          "scrollY": 0,
+          "selector": "input[data-sf-role=\"captcha-input\"]",
+          "smooth": false,
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "dimensions": {
+          "width": 192,
+          "height": 72
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "fxip1gh-output-1",
+              "position": "right",
+              "x": 196,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "fxip1gh-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "fxip1gh",
+        "initialized": true,
+        "label": "element-scroll",
+        "position": {
+          "x": 2852.046561412975,
+          "y": 391.8768163060967
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockBasic"
+      },
+      {
+        "computedPosition": {
+          "x": 3189.231853650992,
+          "y": 391.6322321748397,
+          "z": 0
+        },
+        "data": {
+          "description": "Enter Captcha",
+          "disableBlock": false,
+          "parameters": [
+            {
+              "data": {
+                "masks": [
+                  {
+                    "isRegex": false,
+                    "lazy": false,
+                    "mask": ""
+                  }
+                ],
+                "required": true,
+                "unmaskValue": false,
+                "useMask": false
+              },
+              "defaultValue": "Enter Captcha Here",
+              "description": "The captcha to use for form submission",
+              "id": "mbce",
+              "name": "captcha",
+              "placeholder": "Text",
+              "type": "string"
+            }
+          ],
+          "timeout": 60000
+        },
+        "dimensions": {
+          "width": 192,
+          "height": 72
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "ua6v7lc-output-1",
+              "position": "right",
+              "x": 196,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "ua6v7lc-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 28,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "ua6v7lc",
+        "initialized": true,
+        "label": "parameter-prompt",
+        "position": {
+          "x": 3189.231853650992,
+          "y": 391.6322321748397
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockBasic"
+      },
+      {
+        "computedPosition": {
+          "x": 3544.1251737109133,
+          "y": 296.3216683684728,
+          "z": 0
+        },
+        "data": {
+          "blocks": [
+            {
+              "data": {
+                "assignVariable": false,
+                "clearValue": true,
+                "dataColumn": "",
+                "delay": 0,
+                "description": "Populate Captcha",
+                "disableBlock": false,
+                "events": [],
+                "findBy": "cssSelector",
+                "getValue": false,
+                "markEl": false,
+                "multiple": false,
+                "optionPosition": "1",
+                "saveData": false,
+                "selectOptionBy": "value",
+                "selected": true,
+                "selector": "input[data-sf-role=\"captcha-input\"]",
+                "type": "text-field",
+                "value": "{{variables.captcha}}",
+                "variableName": "",
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "forms",
+              "itemId": "9cKhZ"
+            },
+            {
+              "data": {
+                "description": "Click Submit",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "button[type=\"submit\"]",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "event-click",
+              "itemId": "TMC3Q"
+            }
+          ],
+          "disableBlock": false,
+          "name": ""
+        },
+        "dimensions": {
+          "width": 256,
+          "height": 264
+        },
+        "dragging": false,
+        "events": {},
+        "handleBounds": {
+          "source": [
+            {
+              "id": "66k3fpf-output-1",
+              "position": "right",
+              "x": 260,
+              "y": 124,
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "target": [
+            {
+              "id": "66k3fpf-input-1",
+              "position": "left",
+              "x": -20,
+              "y": 124,
+              "width": 16,
+              "height": 16
+            }
+          ]
+        },
+        "id": "66k3fpf",
+        "initialized": true,
+        "label": "blocks-group",
+        "position": {
+          "x": 3544.1251737109133,
+          "y": 296.3216683684728
+        },
+        "resizing": false,
+        "selected": false,
+        "type": "BlockGroup"
+      }
+    ],
+    "edges": [
+      {
+        "id": "vueflow__edge-YvkVWNy1ly2GJ9OW5C7gdYvkVWNy1ly2GJ9OW5C7gd-output-1-66xumv566xumv5-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "YvkVWNy1ly2GJ9OW5C7gd",
+        "sourceHandle": "YvkVWNy1ly2GJ9OW5C7gd-output-1",
+        "target": "66xumv5",
+        "targetHandle": "66xumv5-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-66xumv566xumv5-output-1-lgi43dclgi43dc-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "66xumv5",
+        "sourceHandle": "66xumv5-output-1",
+        "target": "lgi43dc",
+        "targetHandle": "lgi43dc-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-lgi43dclgi43dc-output-1-2aoe65j2aoe65j-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "lgi43dc",
+        "sourceHandle": "lgi43dc-output-1",
+        "target": "2aoe65j",
+        "targetHandle": "2aoe65j-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-2aoe65j2aoe65j-output-1-am5mcysam5mcys-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "2aoe65j",
+        "sourceHandle": "2aoe65j-output-1",
+        "target": "am5mcys",
+        "targetHandle": "am5mcys-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-am5mcysam5mcys-output-1-3rfx6aw3rfx6aw-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "am5mcys",
+        "sourceHandle": "am5mcys-output-1",
+        "target": "3rfx6aw",
+        "targetHandle": "3rfx6aw-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-3rfx6aw3rfx6aw-output-1-4t39v7t4t39v7t-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "3rfx6aw",
+        "sourceHandle": "3rfx6aw-output-1",
+        "target": "4t39v7t",
+        "targetHandle": "4t39v7t-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-4t39v7t4t39v7t-output-1-fxip1ghfxip1gh-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "4t39v7t",
+        "sourceHandle": "4t39v7t-output-1",
+        "target": "fxip1gh",
+        "targetHandle": "fxip1gh-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-fxip1ghfxip1gh-output-1-ua6v7lcua6v7lc-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "fxip1gh",
+        "sourceHandle": "fxip1gh-output-1",
+        "target": "ua6v7lc",
+        "targetHandle": "ua6v7lc-input-1",
+        "type": "custom",
+        "updatable": true
+      },
+      {
+        "id": "vueflow__edge-ua6v7lcua6v7lc-output-1-66k3fpf66k3fpf-input-1",
+        "data": {},
+        "events": {},
+        "markerEnd": "arrowclosed",
+        "selectable": true,
+        "source": "ua6v7lc",
+        "sourceHandle": "ua6v7lc-output-1",
+        "target": "66k3fpf",
+        "targetHandle": "66k3fpf-input-1",
+        "type": "custom",
+        "updatable": true
+      }
+    ],
+    "position": [
+      -285.2774875266866,
+      176.42680464379745
+    ],
+    "zoom": 0.3
+  },
+  "settings": {
+    "blockDelay": 0,
+    "debugMode": false,
+    "defaultColumnName": "column",
+    "execContext": "popup",
+    "executedBlockOnWeb": false,
+    "inputAutocomplete": true,
+    "insertDefaultColumn": false,
+    "notification": true,
+    "onError": "stop-workflow",
+    "publicId": "ProtectTransKids",
+    "restartTimes": 3,
+    "reuseLastState": false,
+    "saveLog": true,
+    "tabLoadTimeout": 30000
+  },
+  "globalData": "{\n\t\"key\": \"value\"\n}",
+  "description": "https://www.hmd.org.uk/learn-about-the-holocaust-and-genocides/what-is-genocide/the-ten-stages-of-genocide/\n\nStage 8, Persecution: Victims are identified because of their ethnicity or religion and death lists are drawn up.",
+  "includedWorkflows": {}
+}
