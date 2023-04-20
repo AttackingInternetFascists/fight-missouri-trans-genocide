@@ -39,7 +39,13 @@ This repository contains a script for [Automa](https://www.automa.site/) that wi
  * ask you to enter a captcha
  * submit the form
 
-We want to discourage users from abusing this script to submit multiple reports, as it may make it difficult for the Missouri District Attorney to sort through the volume of additional reports.
+#### How do I shot web?
+
+  1. [Install Automa following the instructions on their website](https://www.automa.site/)
+  2. [Follow the Aytoma instructions for importing a workflow](https://docs.automa.site/workflow/overview.html#export-and-import-a-workflow)
+  3. Click the Start () button on the "Protest Trans Genocide in Missouri" workflow.
+  4. When prompted, enter the captcha.
+  5. **We want to discourage users from abusing this script to submit multiple reports, as it may make it difficult for the Missouri District Attorney to sort through the volume of additional reports.**
 
 ### cURL
 
