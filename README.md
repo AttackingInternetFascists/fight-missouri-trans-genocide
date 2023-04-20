@@ -20,15 +20,20 @@ The creation of a registry for transgender individuals is not only discriminator
 
 It is crucial to resist the creation of such a registry and to stand up against any form of discrimination and violence against transgender individuals. Instead, we should work to create safe and inclusive environments that respect everyone's human rights and dignity. Transgender people deserve the same protections as everyone else, and any attempt to create a registry based on their identity is a violation of their basic human rights.
 
-### [Stage 8, Persecution](https://www.hmd.org.uk/learn-about-the-holocaust-and-genocides/what-is-genocide/the-ten-stages-of-genocide/)
+### 10 Stages of Genocide: Stage 8, Persecution
 
 > Victims are identified because of their ethnicity or religion and death lists are drawn up. People are sometimes segregated into ghettos, deported or starved and property is often expropriated. Genocidal massacres begin.
+> _https://www.hmd.org.uk/learn-about-the-holocaust-and-genocides/what-is-genocide/the-ten-stages-of-genocide/_
 
 ## Mechanisms
 
+### Manually
+
+Head on over to the [Missouri Transgender Center Concerns Form](https://ago.mo.gov/file-a-complaint/transgender-center-concerns) and send them a message communicating your thoughts via their standard form.
+
 ### Automa
 
-This repository contains a script for Automa that will
+This repository contains a script for [Automa](https://www.automa.site/) that will
  * autofill the form with random contact information, and "The Message"
  * ask you to enter a captcha
  * submit the form
