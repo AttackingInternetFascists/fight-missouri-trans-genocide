@@ -20,9 +20,11 @@ The creation of a registry for transgender individuals is not only discriminator
 
 It is crucial to resist the creation of such a registry and to stand up against any form of discrimination and violence against transgender individuals. Instead, we should work to create safe and inclusive environments that respect everyone's human rights and dignity. Transgender people deserve the same protections as everyone else, and any attempt to create a registry based on their identity is a violation of their basic human rights.
 
-### 10 Stages of Genocide: Stage 8, Persecution
+### The 10 Stages of Genocide
 
 ![image](https://user-images.githubusercontent.com/114874765/233242905-2d8bb4a4-5ea4-4e81-b067-44b7230b1007.png)
+
+#### Stage 8: Persecution
 
 > Victims are identified because of their ethnicity or religion and death lists are drawn up. People are sometimes segregated into ghettos, deported or starved and property is often expropriated. Genocidal massacres begin.
 >
