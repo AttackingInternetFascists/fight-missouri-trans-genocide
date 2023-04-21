@@ -13,13 +13,17 @@ This repository contains a script for [Automa](https://www.automa.site/) that wi
  * ask you to enter a captcha
  * submit the form
 
-#### How do I shot web?
+#### How-to
 
   1. [Install Automa following the instructions on their website](https://www.automa.site/)
   2. [Follow the Automa instructions for importing a workflow](https://docs.automa.site/workflow/overview.html#export-and-import-a-workflow), and import the file named `automa.json`.
   3. Click the Start ▶ button on the "Protest Trans Genocide in Missouri" workflow.
   4. When prompted, enter the captcha.
   5. **We want to discourage users from abusing this script to submit multiple reports, as it may make it difficult for the Missouri District Attorney to sort through the volume of additional reports.**
+
+### Jupyter Notebook
+
+If you know how to use a Jupyter notebook, check out https://github.com/AttackingInternetFascists/fight-missouri-trans-genocide/blob/main/Fight_Trans_Genocide_in_Missouri.ipynb
 
 ### cURL
 
@@ -42,7 +46,6 @@ curl 'https://ago.mo.gov/file-a-complaint/transgender-center-concerns' \
   --data-raw $'--fascism\r\nContent-Disposition: form-data; name="TextFieldController_4"\r\n\r\n${FNAME}\r\n--fascism\r\nContent-Disposition: form-data; name="TextFieldController_5"\r\n\r\n${LNAME}\r\n--fascism\r\nContent-Disposition: form-data; name="TextFieldController_1"\r\n\r\n${ADDRESS}\r\n--fascism\r\nContent-Disposition: form-data; name="TextFieldController_2"\r\n\r\n${CITY}\r\n--fascism\r\nContent-Disposition: form-data; name="DropdownListFieldController"\r\n\r\n${STATE}\r\n--fascism\r\nContent-Disposition: form-data; name="TextFieldController_6"\r\n\r\n${ZIP}\r\n--fascism\r\nContent-Disposition: form-data; name="TextFieldController_0"\r\n\r\${EMAIL}\r\n--fascism\r\nContent-Disposition: form-data; name="TextFieldController_3"\r\n\r\n${PHONE}\r\n--fascism\r\nContent-Disposition: form-data; name="ParagraphTextFieldController"\r\n\r\n${MESSAGE}\r\n--fascism--\r\n' \
   --compressed
 ```
-
 
 ## The Message
 
